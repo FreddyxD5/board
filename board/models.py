@@ -9,7 +9,7 @@ class Sprint(models.Model):
     end = models.DateField(_("Fin del Sprint"), unique=True)
 
     def __str__(self):
-        return self.name or _('Sprint ending %s'), self.end
+        return self.name or _('Sprint ending %s')%self.end
 
 
 
@@ -36,6 +36,6 @@ class Task(models.Model):
     due = models.DateField(blank=True, null=True)
     completed = models.DateField(blank=True, null=True)
 
-    def __str_(self):    
-        return self.name
+    def __str__(self):        
+        return self.name,
     
