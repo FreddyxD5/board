@@ -1,6 +1,9 @@
 import django_filters
-
+from django.contrib.auth import get_user_model
 from .models import Task
+
+
+User = get_user_model()
 
 class NullFilter(django_filters.BooleanFilter):
     """ Filtro en un conjunto de campos como nulos o no"""
@@ -16,4 +19,3 @@ class TaskFilter(django_filters.FilterSet):
     class Meta:
         model = Task 
         fields = ('sprint', 'status', 'assigned', 'backlog', )
-        
